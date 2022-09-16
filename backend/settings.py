@@ -26,7 +26,7 @@ SECRET_KEY = 'YOUR SECRET KEY'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['mkb-tms.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['mkb-tms.herokuapp.com', '127.0.0.1', ]
 
 # Application definition
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'todo',
     'corsheaders',            # add this
     'rest_framework',         # add this
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -125,6 +126,13 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 
 
 

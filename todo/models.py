@@ -1,4 +1,5 @@
 from django.db import models
+from rest_framework.generics import GenericAPIView
 
 
 class Todo(models.Model):
